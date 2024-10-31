@@ -12,6 +12,11 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "schemaTypes/featuredContent.js",
+    "schemaTypes/featuredContent.jsx"
+  ],
   "exclude": ["node_modules"]
 }
