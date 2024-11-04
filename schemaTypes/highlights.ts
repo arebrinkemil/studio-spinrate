@@ -1,28 +1,19 @@
-import {title} from 'process'
 import {defineField, defineType} from 'sanity'
 
 export default {
-  name: 'banner',
-  title: 'Banner',
+  name: 'highlight',
+  title: 'Highlight',
   type: 'document',
   fields: [
     {
-      name: 'mainImage',
-      title: 'Main Image',
+      name: 'background',
+      title: 'background Image',
       type: 'image',
       options: {
         hotspot: true,
       },
     },
-    {
-      name: 'smallImages',
-      title: 'Small Images',
-      type: 'array',
-      of: [{type: 'image'}],
-      options: {
-        layout: 'grid',
-      },
-    },
+
     {
       name: 'header',
       title: 'Header',
@@ -34,8 +25,8 @@ export default {
       type: 'text',
     },
     {
-      name: 'links',
-      title: 'Links',
+      name: 'highlightIDs',
+      title: 'Highlight IDs',
       type: 'array',
       of: [
         {
@@ -43,13 +34,18 @@ export default {
           fields: [
             {
               name: 'text',
-              title: 'Link Text',
+              title: 'name',
               type: 'string',
             },
             {
-              name: 'url',
-              title: 'URL',
-              type: 'url',
+              name: 'id',
+              title: 'ID',
+              type: 'string',
+            },
+            {
+              name: 'type',
+              title: 'Type',
+              type: 'string',
             },
           ],
         },
