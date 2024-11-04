@@ -13,6 +13,11 @@ export default {
         hotspot: true,
       },
     },
+    {
+      name: 'type',
+      title: 'Type',
+      type: 'string',
+    },
 
     {
       name: 'header',
