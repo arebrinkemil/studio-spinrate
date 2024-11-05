@@ -18,6 +18,11 @@ export default {
       title: 'Type',
       type: 'string',
     },
+    {
+      name: 'id',
+      title: 'ID',
+      type: 'string',
+    },
 
     {
       name: 'header',
