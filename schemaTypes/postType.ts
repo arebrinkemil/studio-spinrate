@@ -1,7 +1,6 @@
-import {title} from 'process'
 import {defineField, defineType} from 'sanity'
 
-export default {
+export default defineType({
   name: 'banner',
   title: 'Banner',
   type: 'document',
@@ -56,4 +55,4 @@ export default {
       ],
     },
   ],
-}
+})
