@@ -11,16 +11,17 @@ function SongSelector({onChange, value = [], type}) {
       try {
         setLoading(true)
         setError(null)
-        
+
         // For now, you'll need to replace this URL with your deployed app URL
         // If your main app is deployed, replace 'your-deployed-app-url.com' with the actual URL
-        const API_URL = process.env.SANITY_STUDIO_API_URL || 'http://localhost:5173'
+
+        const API_URL = 'https://spinrate.arebr.ink'
         const response = await fetch(`${API_URL}/data`)
-        
+
         if (!response.ok) {
           throw new Error(`Failed to fetch data: ${response.statusText}`)
         }
-        
+
         const data = await response.json()
         setItems(data[type] || [])
       } catch (error) {
@@ -62,13 +63,31 @@ function SongSelector({onChange, value = [], type}) {
 
   return (
     <div>
-      <h3>Featured {type.charAt(0).toUpperCase() + type.slice(1)} ({items.length} available)</h3>
+      <h3>
+        Featured {type.charAt(0).toUpperCase() + type.slice(1)} ({items.length} available)
+      </h3>
       {items.length === 0 ? (
         <p>No {type} found in database.</p>
       ) : (
-        <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px', maxHeight: '300px', overflowY: 'auto'}}>
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '10px',
+            maxHeight: '300px',
+            overflowY: 'auto',
+          }}
+        >
           {items.map((item) => (
-            <label key={item.id} style={{display: 'block', padding: '5px', border: '1px solid #ccc', borderRadius: '3px'}}>
+            <label
+              key={item.id}
+              style={{
+                display: 'block',
+                padding: '5px',
+                border: '1px solid #ccc',
+                borderRadius: '3px',
+              }}
+            >
               <input
                 type="checkbox"
                 checked={value.includes(item.id)}
